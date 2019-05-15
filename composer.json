@@ -1,0 +1,26 @@
+{
+    "name":"aalfiann/slim-jwt-skeleton",
+    "description":"This is a skeleton to built rest api with slim framework 3 and JWT Auth.",
+    "keywords":["slimframework", "microframework", "jwt", "rest", "api"],
+    "authors":[
+        {
+            "name": "M ABD AZIZ ALFIAN",
+            "email": "aalfiann@gmail.com",
+            "homepage": "https://github.com/aalfiann",
+            "role": "Developer"
+        }
+    ],
+    "type":"framework",
+    "require": {
+        "php": ">=7.1",
+        "slim/slim": "^3.1",
+        "slim/http-cache": "^0.4.0",
+        "monolog/monolog": "^1.22",
+        "aalfiann/slim-etag-middleware": "^1.0",
+        "tuupola/slim-jwt-auth": "^3.3",
+        "tuupola/cors-middleware": "^0.9.4"
+    },
+    "license":"MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
