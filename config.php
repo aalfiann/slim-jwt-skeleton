@@ -48,7 +48,7 @@ $config['app']['http']['max-age']       = 604800;
  */
 $config['jwt']['header']    = 'X-Token';
 $config['jwt']['secure']    = true;
-$config['jwt']['secret']    = 'devjavelinee';
+$config['jwt']['secret']    = 'dontsubmittogit';
 $config['jwt']['relaxed']   = ["localhost", "dev.yourdomain.com"];
 $config['jwt']['algorithm'] = ["HS256", "HS512", "HS384"];
 $config['jwt']['path']      = '/api/';
