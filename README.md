@@ -9,7 +9,6 @@ This is a skeleton to built rest api with slim framework 3 and JWT Auth.
 ## Dependencies
 - Logger >> monolog/monolog
 - HTTP Cache >> slim/http-cache
-- Firebase JWT >> firebase/php-jwt
 - Slim JWT Auth >> tuupola/slim-jwt-auth
 - Cors Middleware >> tuupola/cors-middleware
 - ETag Middleware >> aalfiann/slim-etag-middleware
