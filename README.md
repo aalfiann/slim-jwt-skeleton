@@ -55,28 +55,29 @@ Header:
 
 ### How to create new application
 - Go to modules directory
-- Create new folder `my-app`
+- Create new folder `my_app`
 - To create routes, you should follow this pattern >> `*.router.php`
 - Done
 
 ### Example
-This is the `my-app.router.php` file
+This is just the part code of `my_app.router.php` file,  
+please take look at `modules/my_app/my_app.router.php` for more detail.  
 ```php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-// Route for /my-app
-$app->group('/my-app', function($app) {
+// Route for /my_app
+$app->group('/my_app', function($app) {
 
     // Show index page
-    // Try to open browser to http://yourdomain.com/my-app/
+    // Try to open browser to http://yourdomain.com/my_app/
     $app->get('/', function (Request $request, Response $response) {
         $data = [
-            'welcome' => 'Hello World, this is my-app index page.',
+            'welcome' => 'Hello World, this is my_app index page.',
             'message' => 'This is my first app rest api with slim-jwt-skeleton.'
         ];
         return $response->withJson($data,200,JSON_PRETTY_PRINT);
-    })->setName("/my-app/");
+    })->setName("/my_app/");
 
 });
 ```

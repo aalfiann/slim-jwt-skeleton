@@ -32,6 +32,9 @@ spl_autoload_register(function ($classname) {
 // Set time zone
 date_default_timezone_set($config['app']['timezone']);
 
+// Declare Skeleton Version
+define('SKELETON_VERSION','1.1.0');
+
 session_start();
 
 require 'app.php';
