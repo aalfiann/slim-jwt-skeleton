@@ -31,25 +31,36 @@ $app->group('/api', function($app) {
         // Get request data JSON 
         $json = $request->getBody();
         $params = json_decode($json, true);
+        if(!empty($params)){
+            // Create token
+            $now = time();
+            $expire = time() + $this->settings['jwt']['expire'];
+            $payload = [
+                "iss" => $_SERVER['SERVER_NAME'],
+                "iat" => $now,
+                "exp" => $expire,
+                "userid" => $params['userid'],
+                "scope" => $params['scope']
+            ];
+            $secret = $this->settings['jwt']['secret'];
+            $token = JWT::encode($payload, $secret, "HS512");
         
-        // Create token
-        $now = time();
-        $expire = time() + $this->settings['jwt']['expire'];
-        $payload = [
-            "iss" => $_SERVER['SERVER_NAME'],
-            "iat" => $now,
-            "exp" => $expire,
-            "userid" => $params['userid'],
-            "scope" => $params['scope']
-        ];
-        $secret = $this->settings['jwt']['secret'];
-        $token = JWT::encode($payload, $secret, "HS512");
-        
-        // Return token
-        $data = [
-            'token' => $token,
-            'expire' => $expire
-        ];
+            // Return token
+            $data = [
+                'status' => 'success',
+                'message' => 'Generate token successfully.',
+                'result' => [
+                    'token' => $token,
+                    'expire' => $expire
+                ]
+            ];
+        } else {
+            $data = [
+                'status' => 'error',
+                'message' => 'Invalid body request!'
+            ];
+        }
+
         return $response->withJson($data,200,JSON_PRETTY_PRINT);
     })->setName("/api/generate");
     
