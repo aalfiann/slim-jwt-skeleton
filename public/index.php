@@ -25,7 +25,7 @@ require dirname(__DIR__).DIRECTORY_SEPARATOR.'config.php';
 
 // Load internal classes
 spl_autoload_register(function ($classname) {
-    $path = realpath(__DIR__ . '/..').DIRECTORY_SEPARATOR.'modules'.DIRECTORY_SEPARATOR.$classname.'.php';
+    $path = realpath(__DIR__ . '/..').DIRECTORY_SEPARATOR.$classname.'.php';
     if (is_file($path)) require ($path);
 });
 
